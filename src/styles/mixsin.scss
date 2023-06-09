@@ -1,0 +1,11 @@
+@mixin image-style($width, $height, $shadow-size, $shadow-color) {
+    width: $width;
+    height: $height;
+    box-shadow: $shadow-size $shadow-size 0 $shadow-color;
+  }
+  
+@mixin shadows($width,$height,$color){
+  box-shadow: $width $height 0px $color, 0 6px 6px rgba(0, 0, 0, 0.2);;
+} 
+
+// box-shadow: 5px -5px 0 var(--color-secondary), 0 4px 4px rgba(0, 0, 0, 0.2);
