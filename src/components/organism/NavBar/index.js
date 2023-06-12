@@ -23,12 +23,12 @@ export default function NavBar() {
                                 <NavLink to={"/"} className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Sponsors</NavLink>
                             </li>
                         </ul>
-                        <span class="nav-item dropdown">
-                            <span class="nav-link dropdown-toggle bi bi-person-circle text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false"> </span>
-                            <ul class="dropdown-menu dropdown-menu-end">
+                        <span className="nav-item dropdown">
+                            <span className="nav-link dropdown-toggle bi bi-person-circle text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false"> </span>
+                            <ul className="dropdown-menu dropdown-menu-end">
                                 <li><NavLink to={"/login"} className={"dropdown-item"}>Login</NavLink></li>
                                 <li><NavLink to={"/register"} className={"dropdown-item"}>Sign up</NavLink></li>
-                                <li><hr class="dropdown-divider" /></li>
+                                <li><hr className="dropdown-divider" /></li>
                             </ul>
                         </span>
                     </div>

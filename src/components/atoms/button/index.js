@@ -19,7 +19,8 @@ const Button = ({ children, variant, size, className, ...rest }) => {
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
-  variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark','custom']),
+  variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'custom',
+    'outline-primary', 'outline-secundary', 'outline-success', 'outline-danger', 'outline-warning', 'outline-info', 'outline-light', 'dark']),
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
   className: PropTypes.string,
 };

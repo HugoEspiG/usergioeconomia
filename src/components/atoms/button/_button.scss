@@ -20,10 +20,6 @@
 //   }
 //}
 
-button:hover{
-  @include shadows($width:5px, $height:-5px,$color:var(--color-secondary));
-}
-
 
 .add-shadow{
   @include shadows($width:10px, $height:-10px,$color:var(--color-secondary));

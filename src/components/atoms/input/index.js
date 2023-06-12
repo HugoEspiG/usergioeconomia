@@ -16,11 +16,10 @@ const Input = React.forwardRef(({ children, label, type, placeholder, classNameD
           ref={ref} // Agregamos el ref aquí
         />
         {children}
-        <label htmlFor="floatingInputGrid">{label}</label>
+        <label htmlFor="floatingInputGrid text-truncate">{label}</label>
       </div>
       :
       <div className={classesDiv}>
-        <label htmlFor="floatingInputGrid">{label}</label>
         <input
           type={type}
           placeholder={placeholder}
@@ -29,6 +28,7 @@ const Input = React.forwardRef(({ children, label, type, placeholder, classNameD
           ref={ref} // Agregamos el ref aquí
         />
         {children}
+        <label htmlFor="floatingInputGrid text-truncate">{label}</label>
       </div>
   );
 });

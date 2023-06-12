@@ -1,8 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import NavBar from './components/organism/NavBar';
-import Login from './pages/Login';
-import Register from './pages/Register';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import UserPage from './pages/UserPage';
 
 function App() {
   return (
@@ -10,8 +11,9 @@ function App() {
       <NavBar></NavBar>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
+        <Route path='/login' element={<LoginPage />} />
+        <Route path='/register' element={<RegisterPage />} />
+        <Route path='/user/:user' element={<UserPage />} />
       </Routes>
     </>
   );

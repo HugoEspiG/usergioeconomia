@@ -1,0 +1,85 @@
+import React, { useState } from 'react';
+import Graph from '../../molecules/Graph';
+import { useEffect } from 'react';
+import { HomeApi } from '../../../api/HomeApi';
+
+const GraphCharger = () => {
+
+    const [data, setData] = useState({});
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+        async function loagGraphsTrend() {
+            const resp = await HomeApi.getGraphs();
+            setData(resp)
+            setLoading(false)
+        }
+        loagGraphsTrend();
+    }, [])
+
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const handleSlide = (index) => {
+        setActiveIndex(index);
+    };
+
+    return (
+        <div>
+            <div className="container overflow-hidden text-center">
+                {!loading?
+                <div id="carouselExampleIndicators" className="carousel slide">
+                    <div className="carousel-indicators">
+                        {
+                        data.graphs.map((_, index) => (
+                            <button
+                                key={index}
+                                type="button"
+                                data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide-to={index}
+                                className={index === activeIndex ? "active" : ""}
+                                aria-current={index === activeIndex ? "true" : ""}
+                                aria-label={`Slide ${index + 1}`}
+                            ></button>
+                        ))}
+                    </div>
+                    <div className="carousel-inner">
+                        {data.graphs.map((graph, index) => (
+                            <div
+                                key={index}
+                                className={`carousel-item ${index === activeIndex ? "active" : ""}`}
+                            >
+                                <Graph data={graph} />
+                            </div>
+                        ))}
+                    </div>
+                    <button
+                        className="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev"
+                        onClick={() => handleSlide(activeIndex - 1)}
+                        disabled={activeIndex === 0}
+                    >
+                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span className="visually-hidden">Previous</span>
+                    </button>
+                    <button
+                        className="carousel-control-next"
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next"
+                        onClick={() => handleSlide(activeIndex + 1)}
+                        disabled={activeIndex === data.graphs.length - 1}
+                    >
+                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span className="visually-hidden">Next</span>
+                    </button>
+                </div>
+                :
+                <></>
+                }
+            </div>
+        </div>
+    );
+};
+
+export default GraphCharger;

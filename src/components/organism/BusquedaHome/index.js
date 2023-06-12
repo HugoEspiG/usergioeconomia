@@ -16,8 +16,8 @@ const BusquedaHome = () => {
                     <Input
                         placeholder={"Selecciona un grafo por nombre o identificador"}
                         type={"text"}
-                        classNameDiv={"form-floating my-4 col-md-6"}
-                        classNameInput={"rounded-start-pill border border-end-0"}
+                        classNameDiv={"form-floating my-4 col-md-4"}
+                        classNameInput={"rounded-start-pill border border-end-0 text-truncate"}
                         {...register("busqueda", { required: true })}
                         autoComplete="on"
                         label={"Selecciona un grafo por nombre o identificador"}

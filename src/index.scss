@@ -8,4 +8,8 @@
 
 // Importar los estilos específicos de los componentes
 
- 
+@import './components/atoms/button/button';
+@import './components/atoms/input/input';
+@import './components/atoms/PItem/pItem';
+@import './components/molecules/Graph/Graph';
+@import './components/organism/User/Login/Login';
