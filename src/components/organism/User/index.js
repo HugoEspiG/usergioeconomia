@@ -1,11 +1,10 @@
 import React, { useContext } from 'react';
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { NavLink, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../../context/UserContext';
 import PItem from '../../atoms/PItem';
 import BusquedaHome from '../BusquedaHome';
-import Graph from '../../molecules/Graph';
+import GraphCharger from '../GraphCharger';
 
 const User = () => {
     const { user } = useParams();
@@ -28,16 +27,7 @@ const User = () => {
                             <PItem variant={"fs-1 fw-semibold"} color={"dark"} className={"mt-5 mb-4 p-2 text-center"}>{data.nombre}</PItem>
                             <BusquedaHome></BusquedaHome>
                             <PItem variant={"fs-3 fst-italic"} color={"dark"} className={"my-4 mx-5 p-4 text-center lh-lg"}>Tus grafos:</PItem>
-                            <div className="container overflow-hidden text-center">
-                                <div className="row g-2">
-                                    {data.graphs.map((cerv, key) => {
-                                        return (
-                                            <div key={key} className="col-6">
-                                                <Graph data={cerv}></Graph>
-                                            </div>)
-                                    })}
-                                </div>
-                            </div>
+                            <GraphCharger data={data}></GraphCharger>
                         </div>
                     </div>
                     :

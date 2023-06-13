@@ -1,7 +1,7 @@
 import React from 'react';
 import PItem from '../components/atoms/PItem'
 import BusquedaHome from '../components/organism/BusquedaHome';
-import GraphCharger from '../components/organism/GraphCharger';
+import HomeGraphCharger from '../components/organism/HomeGraphCharger';
 
 const Home = () => {
     return (
@@ -11,7 +11,7 @@ const Home = () => {
                 <PItem variant={"fs-4"} color={"dark"} className={"my-4 mx-5 p-4 text-center lh-lg"}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, explicabo atque! Voluptates dignissimos distinctio enim iste consectetur, vel atque. Incidunt ducimus provident ut odit non! A odit eligendi libero. Natus!</PItem>
                 <BusquedaHome></BusquedaHome>
                 <PItem variant={"fs-3 fst-italic"} color={"dark"} className={"my-4 mx-5 p-4 text-center lh-lg"}>Nuestros grafos populares:</PItem>
-                <GraphCharger></GraphCharger>
+                <HomeGraphCharger></HomeGraphCharger>
             </div>
         </div>
     );
